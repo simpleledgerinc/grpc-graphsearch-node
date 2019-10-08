@@ -1,0 +1,41 @@
+{
+  "name": "grpc-slp-graphsearch-node",
+  "version": "0.0.1",
+  "description": "SLP Graph Search gRPC interface for node.js clients.",
+  "main": "index.js",
+  "files": [
+    "index.ts",
+    "src/",
+    "pb/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` -I ./ ./pb/*.proto && protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./ -I ./ ./pb/*.proto && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcramer/grpc-slp-graphsearch-node.git"
+  },
+  "keywords": [
+    "bch",
+    "BCHD",
+    "rpc",
+    "grpc",
+    "slp"
+  ],
+  "author": "James Cramer",
+  "bugs": {
+    "url": "https://github.com/jcramer/grpc-slp-graphsearch-node/issues"
+  },
+  "homepage": "https://github.com/jcramer/grpc-slp-graphsearch-node#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "grpc_tools_node_protoc_ts": "2.5.4"
+  },
+  "dependencies": {
+    "google-protobuf": "3.9.1",
+    "grpc": "1.23.1",
+    "protobufjs": "6.8.8",
+    "@types/google-protobuf": "3.7.1"
+  }
+}
