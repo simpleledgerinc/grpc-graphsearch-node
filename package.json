@@ -30,12 +30,13 @@
   "homepage": "https://github.com/jcramer/grpc-slp-graphsearch-node#readme",
   "devDependencies": {
     "@types/node": "^12.7.2",
-    "grpc_tools_node_protoc_ts": "2.5.4"
+    "grpc-tools": "^1.8.1",
+    "grpc_tools_node_protoc_ts": "2.5.4",
+    "protobufjs": "^6.8.8"
   },
   "dependencies": {
     "google-protobuf": "3.9.1",
     "grpc": "1.23.1",
-    "protobufjs": "6.8.8",
     "@types/google-protobuf": "3.7.1"
   }
 }

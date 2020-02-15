@@ -24,11 +24,37 @@ export class GraphSearchClient {
         this.client = new graphsearchrpc_grpc_pb.GraphSearchServiceClient(url, creds, options)
     }
 
-    graphSearchFor(txid: string): Promise<graphsearchrpc_pb.GraphSearchReply> {
+    graphSearch(txid: string, excludeTxids?: string[]): Promise<graphsearchrpc_pb.GraphSearchReply> {
         let req = new graphsearchrpc_pb.GraphSearchRequest();
         req.setTxid(txid);
+        if (excludeTxids) {
+            for (const etxid of excludeTxids) {
+                req.addExcludeTxids(etxid);
+            }
+        }
         return new Promise((resolve, reject) => {
             this.client.graphSearch(req, (err, data) => {
+                if (err !== null) reject(err);
+                else resolve(data!);
+            });
+        });
+    }
+
+    trustedValidation(txid: string): Promise<graphsearchrpc_pb.TrustedValidationReply> {
+        let req = new graphsearchrpc_pb.TrustedValidationRequest();
+        req.setTxid(txid);
+        return new Promise((resolve, reject) => {
+            this.client.trustedValidation(req, (err, data) => {
+                if (err !== null) reject(err);
+                else resolve(data!);
+            });
+        });
+    }
+
+    status(): Promise<graphsearchrpc_pb.StatusReply> {
+        let req = new graphsearchrpc_pb.StatusRequest();
+        return new Promise((resolve, reject) => {
+            this.client.status(req, (err, data) => {
                 if (err !== null) reject(err);
                 else resolve(data!);
             });
