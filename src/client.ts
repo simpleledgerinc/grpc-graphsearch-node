@@ -13,7 +13,7 @@ export class GraphSearchClient {
             creds = grpc.credentials.createSsl(rootCert)
         }
         if(!url) {
-            url = "ec2-3-16-85-248.us-east-2.compute.amazonaws.com:50051";
+            url = "gs.fountainhead.cash:50051";
         }
         if(!options) {
             options = {
