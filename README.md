@@ -2,12 +2,12 @@
 
 
 ## Install
-`npm install grpc-slp-graphsearch-node --save` (see [web](https://github.com/jcramer/grpc-bchrpc-web) version)
+`npm i grpc-slp-graphsearch-node`
 
 
 ### Build from source (from `./bchrpc.proto`)
 1. Install Protocol Compiler from: https://github.com/protocolbuffers/protobuf
-2. `npm install`
+2. `npm i`
 3. `npm run build && tsc`
 
 

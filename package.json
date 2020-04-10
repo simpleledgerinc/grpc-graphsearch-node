@@ -2,7 +2,7 @@
   "name": "grpc-slp-graphsearch-node",
   "version": "0.0.1",
   "description": "SLP Graph Search gRPC interface for node.js clients.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "index.ts",
     "src/",
