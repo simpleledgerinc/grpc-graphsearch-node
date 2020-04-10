@@ -8,7 +8,7 @@
 ### Build from source (from `./bchrpc.proto`)
 1. Install Protocol Compiler from: https://github.com/protocolbuffers/protobuf
 2. `npm i`
-3. `npm run build && tsc`
+3. `npm run build`
 
 
 ## Example usage
