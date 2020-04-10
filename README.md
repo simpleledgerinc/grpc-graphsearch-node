@@ -2,7 +2,7 @@
 
 
 ## Install
-`npm i grpc-slp-graphsearch-node`
+`npm i grpc-graphsearch-node`
 
 
 ### Build from source (from `./bchrpc.proto`)
@@ -22,6 +22,11 @@ res.forEach(i => console.log(res.getTxdataList_asU8());
 ```
 
 ## Change Log
+
+### 0.1.0
+- Updated proto file
+- Added 'reveredHashOrder' and 'excludeList' options to graphSearchFor() client method
+- Updated package name
 
 ### 0.0.1
 - Create promise based method for graphSearch(txid);

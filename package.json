@@ -1,11 +1,10 @@
 {
-  "name": "grpc-slp-graphsearch-node",
-  "version": "0.0.1",
+  "name": "grpc-graphsearch-node",
+  "version": "0.1.0",
   "description": "SLP Graph Search gRPC interface for node.js clients.",
   "main": "dist/index.js",
   "files": [
-    "index.ts",
-    "src/",
+    "dist",
     "pb/"
   ],
   "scripts": {
@@ -29,7 +28,7 @@
   },
   "homepage": "https://github.com/jcramer/grpc-slp-graphsearch-node#readme",
   "devDependencies": {
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.12.35",
     "grpc_tools_node_protoc_ts": "2.5.4"
   },
   "dependencies": {
