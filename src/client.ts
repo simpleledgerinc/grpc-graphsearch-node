@@ -14,7 +14,7 @@ export class GraphSearchClient {
             creds = grpc.credentials.createSsl(rootCert);
         }
         if (!url) {
-            url = "ec2-3-16-85-248.us-east-2.compute.amazonaws.com:50051";
+            url = "gs.fountainhead.cash:50051";
         }
         if (!options) {
             options = {
@@ -25,8 +25,8 @@ export class GraphSearchClient {
         this.client = new graphsearchrpc_grpc_pb.GraphSearchServiceClient(url, creds, options);
     }
 
-    public graphSearchFor({ hash, reversedHashOrder, excludeList }:
-        { hash: string, reversedHashOrder: boolean, excludeList: string[] }):
+    public graphSearchFor({ hash, reversedHashOrder = true, excludeList = [] }:
+        { hash: string, reversedHashOrder?: boolean, excludeList?: string[] }):
         Promise<graphsearchrpc_pb.GraphSearchReply> {
         const req = new graphsearchrpc_pb.GraphSearchRequest();
         if (reversedHashOrder) {
