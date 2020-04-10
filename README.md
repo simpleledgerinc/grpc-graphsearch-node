@@ -17,11 +17,15 @@
 let grpc = new GraphSearchClient();
 let txid = "598c6572b70680710560d2ab40cabfde3156353ec5da217e18a8519843ff4423";
 let res;
-(async () => { res = await grpc.graphSearchFor(txid))();
+(async () => { res = await grpc.graphSearchFor({ hash: txid, reversedHashOrder: true }))();
 res.forEach(i => console.log(res.getTxdataList_asU8());
 ```
 
 ## Change Log
+
+### 0.1.3
+- Update default URL to gs.fountainhead.cash
+- Update default parameters
 
 ### 0.1.0
 - Updated proto file
