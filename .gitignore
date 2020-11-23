@@ -1,7 +1,5 @@
-pb/*.js
-pb/*.ts
-src/*.js
 node_modules
 index.js
-**/*.js.map
+*.js.map
 dist
+.DS_Store

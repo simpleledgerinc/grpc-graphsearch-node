@@ -17,11 +17,13 @@ interface ITrustedValidationParameters {
 export class GraphSearchClient {
     public client: graphsearchrpc_grpc_pb.GraphSearchServiceClient;
 
-    constructor({ url, rootCertPath, options }: { url?: string; rootCertPath?: string; testnet?: boolean, options?: object } = {}) {
-        let creds = grpc.credentials.createInsecure();
+    constructor({ url, rootCertPath, options, notls }: { url?: string; rootCertPath?: string; testnet?: boolean, options?: object, notls?: boolean } = {}) {
+        let creds = grpc.credentials.createSsl();
         if (rootCertPath) {
             const rootCert = fs.readFileSync(rootCertPath);
             creds = grpc.credentials.createSsl(rootCert);
+        } else if (notls) {
+            creds = grpc.credentials.createInsecure();
         }
         if (!url) {
             url = "gs.fountainhead.cash:50051";
