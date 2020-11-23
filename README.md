@@ -23,6 +23,9 @@ res.forEach(i => console.log(res.getTxdataList_asU8());
 
 ## Change Log
 
+### 0.2.1
+- Hot fix to fix bad 0.2.0 publish to npm
+
 ### 0.2.0
 - Added `notls` option to explicitly connect without ssl.
 - Updated gRPC version and build scripts
