@@ -100,6 +100,140 @@ export namespace TrustedValidationReply {
     }
 }
 
+export class TrustedValidationBulkRequest extends jspb.Message { 
+    clearTxidsList(): void;
+    getTxidsList(): Array<TrustedValidationRequest>;
+    setTxidsList(value: Array<TrustedValidationRequest>): TrustedValidationBulkRequest;
+    addTxids(value?: TrustedValidationRequest, index?: number): TrustedValidationRequest;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TrustedValidationBulkRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: TrustedValidationBulkRequest): TrustedValidationBulkRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TrustedValidationBulkRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TrustedValidationBulkRequest;
+    static deserializeBinaryFromReader(message: TrustedValidationBulkRequest, reader: jspb.BinaryReader): TrustedValidationBulkRequest;
+}
+
+export namespace TrustedValidationBulkRequest {
+    export type AsObject = {
+        txidsList: Array<TrustedValidationRequest.AsObject>,
+    }
+}
+
+export class TrustedValidationBulkReply extends jspb.Message { 
+    clearValidList(): void;
+    getValidList(): Array<TrustedValidationReply>;
+    setValidList(value: Array<TrustedValidationReply>): TrustedValidationBulkReply;
+    addValid(value?: TrustedValidationReply, index?: number): TrustedValidationReply;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TrustedValidationBulkReply.AsObject;
+    static toObject(includeInstance: boolean, msg: TrustedValidationBulkReply): TrustedValidationBulkReply.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TrustedValidationBulkReply, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TrustedValidationBulkReply;
+    static deserializeBinaryFromReader(message: TrustedValidationBulkReply, reader: jspb.BinaryReader): TrustedValidationBulkReply;
+}
+
+export namespace TrustedValidationBulkReply {
+    export type AsObject = {
+        validList: Array<TrustedValidationReply.AsObject>,
+    }
+}
+
+export class OutputOracleRequest extends jspb.Message { 
+    getTxid(): string;
+    setTxid(value: string): OutputOracleRequest;
+
+    getVout(): number;
+    setVout(value: number): OutputOracleRequest;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): OutputOracleRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: OutputOracleRequest): OutputOracleRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: OutputOracleRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): OutputOracleRequest;
+    static deserializeBinaryFromReader(message: OutputOracleRequest, reader: jspb.BinaryReader): OutputOracleRequest;
+}
+
+export namespace OutputOracleRequest {
+    export type AsObject = {
+        txid: string,
+        vout: number,
+    }
+}
+
+export class OutputOracleReply extends jspb.Message { 
+    getMsg(): Uint8Array | string;
+    getMsg_asU8(): Uint8Array;
+    getMsg_asB64(): string;
+    setMsg(value: Uint8Array | string): OutputOracleReply;
+
+    getSig(): Uint8Array | string;
+    getSig_asU8(): Uint8Array;
+    getSig_asB64(): string;
+    setSig(value: Uint8Array | string): OutputOracleReply;
+
+    getTx(): Uint8Array | string;
+    getTx_asU8(): Uint8Array;
+    getTx_asB64(): string;
+    setTx(value: Uint8Array | string): OutputOracleReply;
+
+    getVout(): number;
+    setVout(value: number): OutputOracleReply;
+
+    getTokenid(): Uint8Array | string;
+    getTokenid_asU8(): Uint8Array;
+    getTokenid_asB64(): string;
+    setTokenid(value: Uint8Array | string): OutputOracleReply;
+
+    getTokentype(): number;
+    setTokentype(value: number): OutputOracleReply;
+
+    getValue(): number;
+    setValue(value: number): OutputOracleReply;
+
+    getIsBaton(): boolean;
+    setIsBaton(value: boolean): OutputOracleReply;
+
+    getGroupid(): Uint8Array | string;
+    getGroupid_asU8(): Uint8Array;
+    getGroupid_asB64(): string;
+    setGroupid(value: Uint8Array | string): OutputOracleReply;
+
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): OutputOracleReply.AsObject;
+    static toObject(includeInstance: boolean, msg: OutputOracleReply): OutputOracleReply.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: OutputOracleReply, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): OutputOracleReply;
+    static deserializeBinaryFromReader(message: OutputOracleReply, reader: jspb.BinaryReader): OutputOracleReply;
+}
+
+export namespace OutputOracleReply {
+    export type AsObject = {
+        msg: Uint8Array | string,
+        sig: Uint8Array | string,
+        tx: Uint8Array | string,
+        vout: number,
+        tokenid: Uint8Array | string,
+        tokentype: number,
+        value: number,
+        isBaton: boolean,
+        groupid: Uint8Array | string,
+    }
+}
+
 export class StatusRequest extends jspb.Message { 
 
     serializeBinary(): Uint8Array;

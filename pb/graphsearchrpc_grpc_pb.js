@@ -1,7 +1,5 @@
 // GENERATED CODE -- DO NOT EDIT!
 
-// Original file comments:
-// source: https://github.com/blockparty-sh/cpp_slp_graph_search/blob/master/pb/graphsearch.proto
 'use strict';
 var grpc = require('grpc');
 var pb_graphsearchrpc_pb = require('../pb/graphsearchrpc_pb.js');
@@ -28,6 +26,28 @@ function deserialize_graphsearch_GraphSearchRequest(buffer_arg) {
   return pb_graphsearchrpc_pb.GraphSearchRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_graphsearch_OutputOracleReply(arg) {
+  if (!(arg instanceof pb_graphsearchrpc_pb.OutputOracleReply)) {
+    throw new Error('Expected argument of type graphsearch.OutputOracleReply');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_graphsearch_OutputOracleReply(buffer_arg) {
+  return pb_graphsearchrpc_pb.OutputOracleReply.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_graphsearch_OutputOracleRequest(arg) {
+  if (!(arg instanceof pb_graphsearchrpc_pb.OutputOracleRequest)) {
+    throw new Error('Expected argument of type graphsearch.OutputOracleRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_graphsearch_OutputOracleRequest(buffer_arg) {
+  return pb_graphsearchrpc_pb.OutputOracleRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_graphsearch_StatusReply(arg) {
   if (!(arg instanceof pb_graphsearchrpc_pb.StatusReply)) {
     throw new Error('Expected argument of type graphsearch.StatusReply');
@@ -48,6 +68,28 @@ function serialize_graphsearch_StatusRequest(arg) {
 
 function deserialize_graphsearch_StatusRequest(buffer_arg) {
   return pb_graphsearchrpc_pb.StatusRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_graphsearch_TrustedValidationBulkReply(arg) {
+  if (!(arg instanceof pb_graphsearchrpc_pb.TrustedValidationBulkReply)) {
+    throw new Error('Expected argument of type graphsearch.TrustedValidationBulkReply');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_graphsearch_TrustedValidationBulkReply(buffer_arg) {
+  return pb_graphsearchrpc_pb.TrustedValidationBulkReply.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_graphsearch_TrustedValidationBulkRequest(arg) {
+  if (!(arg instanceof pb_graphsearchrpc_pb.TrustedValidationBulkRequest)) {
+    throw new Error('Expected argument of type graphsearch.TrustedValidationBulkRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_graphsearch_TrustedValidationBulkRequest(buffer_arg) {
+  return pb_graphsearchrpc_pb.TrustedValidationBulkRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_graphsearch_TrustedValidationReply(arg) {
@@ -95,6 +137,28 @@ var GraphSearchServiceService = exports.GraphSearchServiceService = {
     requestDeserialize: deserialize_graphsearch_TrustedValidationRequest,
     responseSerialize: serialize_graphsearch_TrustedValidationReply,
     responseDeserialize: deserialize_graphsearch_TrustedValidationReply,
+  },
+  trustedValidationBulk: {
+    path: '/graphsearch.GraphSearchService/TrustedValidationBulk',
+    requestStream: false,
+    responseStream: false,
+    requestType: pb_graphsearchrpc_pb.TrustedValidationBulkRequest,
+    responseType: pb_graphsearchrpc_pb.TrustedValidationBulkReply,
+    requestSerialize: serialize_graphsearch_TrustedValidationBulkRequest,
+    requestDeserialize: deserialize_graphsearch_TrustedValidationBulkRequest,
+    responseSerialize: serialize_graphsearch_TrustedValidationBulkReply,
+    responseDeserialize: deserialize_graphsearch_TrustedValidationBulkReply,
+  },
+  outputOracle: {
+    path: '/graphsearch.GraphSearchService/OutputOracle',
+    requestStream: false,
+    responseStream: false,
+    requestType: pb_graphsearchrpc_pb.OutputOracleRequest,
+    responseType: pb_graphsearchrpc_pb.OutputOracleReply,
+    requestSerialize: serialize_graphsearch_OutputOracleRequest,
+    requestDeserialize: deserialize_graphsearch_OutputOracleRequest,
+    responseSerialize: serialize_graphsearch_OutputOracleReply,
+    responseDeserialize: deserialize_graphsearch_OutputOracleReply,
   },
   status: {
     path: '/graphsearch.GraphSearchService/Status',

@@ -1,4 +1,3 @@
-// source: https://github.com/blockparty-sh/cpp_slp_graph_search/blob/master/pb/graphsearch.proto
 syntax = "proto3";
 
 option java_multiple_files = true;
@@ -11,6 +10,8 @@ package graphsearch;
 service GraphSearchService {
   rpc GraphSearch (GraphSearchRequest) returns (GraphSearchReply) {}
   rpc TrustedValidation (TrustedValidationRequest) returns (TrustedValidationReply) {}
+  rpc TrustedValidationBulk (TrustedValidationBulkRequest) returns (TrustedValidationBulkReply) {}
+  rpc OutputOracle (OutputOracleRequest) returns (OutputOracleReply) {}
   rpc Status (StatusRequest) returns (StatusReply) {}
 }
 
@@ -29,6 +30,32 @@ message TrustedValidationRequest {
 
 message TrustedValidationReply {
     bool valid = 1;
+}
+
+message TrustedValidationBulkRequest {
+    repeated TrustedValidationRequest txids = 1;
+}
+
+message TrustedValidationBulkReply {
+    repeated TrustedValidationReply valid = 1;
+}
+
+message OutputOracleRequest {
+    string txid = 1;
+    uint32 vout = 2;
+}
+
+message OutputOracleReply {
+    bytes msg = 1;
+    bytes sig = 2;
+    // TODO these are for debug, maybe remove later for next release?
+    bytes tx  = 3;
+    uint32 vout = 4;
+    bytes tokenid = 5;
+    uint32 tokentype = 6;
+    uint64 value = 7;
+    bool is_baton = 8;
+    bytes groupid = 9;
 }
 
 message StatusRequest {

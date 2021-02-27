@@ -14,6 +14,11 @@ interface ITrustedValidationParameters {
     reversedHashOrder?: boolean;
 }
 
+interface ITrustedValidationBulkParameters {
+    hashes: string[];
+    reversedHashOrder?: boolean;
+}
+
 export class GraphSearchClient {
     public client: graphsearchrpc_grpc_pb.GraphSearchServiceClient;
 
@@ -72,6 +77,27 @@ export class GraphSearchClient {
         }
         return new Promise((resolve, reject) => {
             this.client.trustedValidation(req, (err, data) => {
+                if (err !== null) { reject(err); } else { resolve(data!); }
+            });
+        });
+    }
+
+    public trustedValidationBulkFor({ hashes, reversedHashOrder = true }: ITrustedValidationBulkParameters): Promise<graphsearchrpc_pb.TrustedValidationBulkReply> {
+        const req = new graphsearchrpc_pb.TrustedValidationBulkRequest();
+
+        for (const hash of hashes) {
+            const tvreq = new graphsearchrpc_pb.TrustedValidationRequest();
+            if (reversedHashOrder) {
+                tvreq.setTxid(Buffer.from(new Uint8Array(
+                    hash.match(/.{1,2}/g)!.map((byte) => parseInt(byte, 16))).reverse()).toString("hex"));
+            } else {
+                tvreq.setTxid(hash);
+            }
+            req.addTxids(tvreq);
+        }
+
+        return new Promise((resolve, reject) => {
+            this.client.trustedValidationBulk(req, (err, data) => {
                 if (err !== null) { reject(err); } else { resolve(data!); }
             });
         });
