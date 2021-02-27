@@ -31,7 +31,7 @@ export class GraphSearchClient {
             creds = grpc.credentials.createInsecure();
         }
         if (!url) {
-            url = "gs.fountainhead.cash:50051";
+            url = "gs.fountainhead.cash:443";
         }
         if (!options) {
             options = {
